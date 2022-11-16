@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/responsive.css">
+    <link rel="shortcut icon" type="image/icon" href="images/YC Clubs.png"/>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <title>YCclubs</title>
+</head>
+<body>
+  <header>
+    <div class="logo">
+        <img src="assets/images/YC Clubs.png"/>
+    </div>
+    <div class="nav">
+        <a href="index.html">Home</a>
+        <a href="About.html" style="color: #0384EE;">About</a>
+        <a href="contact.html">Contact</a>
+    </div>
+    <a href="login.html"><i class="fa fa-sign-in" id="sign-in" aria-hidden="true"></i></a>
+    <div class="test" >
+        <label style="height: 100px;">☰</label>
+    <div class="test-content">
+            <a href="index.html" >Home</a>
+            <a href="About.html"style="color: #0384EE;">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="login.html"><i class="fa fa-sign-in" aria-hidden="true"></i></a>
+        </div>
+</div>
+</header>
+    <div class="About">
+      <div class="About-head">
+        <h2 style="color: white;">About Youcode Clubs </h2>
+        <br>
+        <p style="color: white;">Welcome dear youcoders, youcode is not only about coding, but also about improving other skills, and there is no better way than to join one of its clubs, you can find many types of clubs 'social, sport, art, envirement, robotic...'</p>
+     </div>
+        <div class="slideshow-container">
+
+            <div class="mySlides fade">
+              <img src="https://scontent.fcmn1-2.fna.fbcdn.net/v/t39.30808-6/308943555_209130704802505_2484629517799509470_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=DazS588id6cAX9FSjKR&_nc_ht=scontent.fcmn1-2.fna&oh=00_AfDtbEgNg_EzKNjAwV4BOxDubbZ0Q2BafiruUADgKsyIbQ&oe=637935C3" style="width:100%">
+            </div>
+            
+            <div class="mySlides fade">
+              <img src="https://scontent.fcmn1-2.fna.fbcdn.net/v/t39.30808-6/312183560_209130631469179_734995929026384256_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=GrEPT3ysmY0AX9KiNxP&_nc_ht=scontent.fcmn1-2.fna&oh=00_AfBMnh00W4ZLy33g0R8tzd1YRPBfztMYPrORgTX79zfboA&oe=637940A3" style="width:100%">
+            </div>
+            
+            <div class="mySlides fade">
+              <img src="https://scontent.fcmn1-1.fna.fbcdn.net/v/t39.30808-6/295916606_1147936919120808_6042138307338011303_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=AQ8OjaCHC8QAX-L4GQd&_nc_ht=scontent.fcmn1-1.fna&oh=00_AfBmZCOLWIsHL2ORYWeqFVDAm0fDzICxNTKlTpodbAPOMw&oe=6379DBA5" style="width:100%">
+            </div>
+            <div style="text-align:center">
+                <div class="dot"></div> 
+                <div class="dot"></div> 
+                <div class="dot"></div> 
+              </div>
+        </div>
+    </div>
+    <footer id="footer"  class="footer">
+      <div class="footer-social">
+          <a href="https://www.facebook.com/kenza.zafer.9"><i class="fa fa-facebook"></i></a>	
+          <a href="https://www.instagram.com/kenza_zafer/"><i class="fa fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/kenza-zafer-05a24921b/"><i class="fa fa-linkedin"></i></a>	
+      </div>
+      <p>
+          &copy; developed by <a style="color:#0384EE;">ZAFER kenza</a> 
+      </p><!--/p-->
+
+</footer>
+<script>
+    let slideIndex = 0;
+    showSlides();
+    
+    function showSlides() {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1}    
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+      setTimeout(showSlides, 4000); // Change image every 2 seconds
+    }
+    </script>
+</body>
+</html>

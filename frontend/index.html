@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/style.css">
-    <link rel="stylesheet" href="assets/responsive.css">
     <link rel="shortcut icon" type="image/icon" href="images/YC Clubs.png"/>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/responsive.css">
+    <script>$('#carouselFade').carousel();</script>
     <title>YCclubs</title>
 </head>
 <body>
@@ -37,7 +40,7 @@
             <div class="search-box">
             <form action="clubs.html">
                 <select>
-                    <option>Categorie</option>
+                    <option>All clubs</option>
                     <option>Art</option>
                     <option>Sport</option>
                     <option>Envirement</option>
@@ -48,50 +51,59 @@
             </form>
             </div> 
     </div>
-    <div class="clubs" id="clubs">
-       <div class="club">
-            <img src="https://i.pinimg.com/474x/57/4f/8a/574f8a1e1927ea4338c0fcd03fa303a4.jpg" style="width: 150px; height:150px"/>
-            <h2> YC Club </h2>
-            <p>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</p>
-            <p class="date">22/12/2022</p>
-            <span class="categorie">Club</span>
+    <div class="center">
+    <div id="carouselFade" class="carousel slide carousel-fade" data-ride="carousel">
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active" style="background-image: url('https://scontent.fcmn1-2.fna.fbcdn.net/v/t39.30808-6/308943555_209130704802505_2484629517799509470_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=GeRpGHMaZXUAX_kW438&_nc_ht=scontent.fcmn1-2.fna&oh=00_AfAJE4h7lKCT1h0_oT4jpKgBrDqMpDz0jbgOO7TTl2mssg&oe=637B3003');">  
+                <div class="carousel-caption">
+                  <h3>Youcode clubs</h3>
+                  <p>“ Youcode is not just a school it's a lifestyle”</p>
+                </div>
+            </div>
+            <div class="item" style="background-image: url('https://i.pinimg.com/564x/aa/fd/42/aafd429906b1e35289054f0347c31303.jpg');">  
+                <div class="carousel-caption">
+                  <h3>Sports</h3>
+                  <p>“ The only one who can tell you 'you can't win' is you and you don't have to listen.”</p>
+                </div>
+            </div>
+            <div class="item" style="background-image: url('https://i.pinimg.com/564x/bc/8c/03/bc8c03ba12f286713f826efc3b908e0f.jpg');"> 
+                <div class="carousel-caption">
+                  <h3>Arts</h3>
+                  <p>“If you ask me what I came to do in this world, I, an artist, will answer you: I am here to live out loud.” – Émile Zola.</p>
+                </div>
+            </div>
+            <div class="item" style="background-image: url('https://i.pinimg.com/564x/0b/0f/3c/0b0f3cffde17992e7ace9006de1882d2.jpg');"> 
+                <div class="carousel-caption">
+                  <h3>Robotic</h3>
+                  <p>Don't think of robots as replacements for humans, think of them as things that will help make us better at tackling many of the problems we face.</p>
+                </div>
+            </div>
+            <div class="item" style="background-image: url('https://i.pinimg.com/564x/43/ac/41/43ac41924e4907c38821ff63f757f3cc.jpg');"> 
+                <div class="carousel-caption">
+                  <h3>Envirement</h3>
+                  <p>“The environment is where we all meet; where we all have a mutual interest; it is the one thing all of us share.” -Lady Bird Johnson.</p>
+                </div>
+            </div>
+            <div class="item" style="background-image: url('https://i.pinimg.com/564x/65/8c/b8/658cb8e21935217c7225dc38aea681be.jpg');"> 
+                <div class="carousel-caption">
+                  <h3>Humanity</h3>
+                  <p>“We cannot despair of humanity, since we ourselves are human beings.”</p>
+                </div>
+            </div>
         </div>
-        <div class="club">
-            <img src="https://i.pinimg.com/474x/57/4f/8a/574f8a1e1927ea4338c0fcd03fa303a4.jpg" style="width: 150px; height:150px"/>
-            <h2> YC Club </h2>
-            <p>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</p>
-            <p class="date">22/12/2022</p>
-            <span class="categorie">Club</span>
-        </div>
-        <div class="club">
-            <img src="https://i.pinimg.com/474x/57/4f/8a/574f8a1e1927ea4338c0fcd03fa303a4.jpg" style="width: 150px; height:150px"/>
-            <h2> YC Club </h2>
-            <p>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</p>
-            <p class="date">22/12/2022</p>
-            <span class="categorie">Club</span>
-        </div>
-        <div class="club">
-            <img src="https://i.pinimg.com/474x/57/4f/8a/574f8a1e1927ea4338c0fcd03fa303a4.jpg" style="width: 150px; height:150px"/>
-            <h2> YC Club </h2>
-            <p>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</p>
-            <p class="date">22/12/2022</p>
-            <span class="categorie">Club</span>
-        </div>
-        <div class="club">
-            <img src="https://i.pinimg.com/474x/57/4f/8a/574f8a1e1927ea4338c0fcd03fa303a4.jpg" style="width: 150px; height:150px"/>
-            <h2> YC Club </h2>
-            <p>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</p>
-            <p class="date">22/12/2022</p>
-            <span class="categorie">Club</span>
-        </div>
-        <div class="club">
-            <img src="https://i.pinimg.com/474x/57/4f/8a/574f8a1e1927ea4338c0fcd03fa303a4.jpg" style="width: 150px; height:150px"/>
-            <h2> YC Club </h2>
-            <p>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</p>
-            <p class="date">22/12/2022</p>
-            <span class="categorie">Club</span>
-        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carouselFade" role="button" data-slide="prev">
+            <div class="glyphicon glyphicon-chevron-left" aria-hidden="true"></div>
+            <div class="sr-only">Previous</div>
+        </a>
+        <a class="right carousel-control" href="#carouselFade" role="button" data-slide="next">
+            <div class="glyphicon glyphicon-chevron-right" aria-hidden="true"></div>
+            <div class="sr-only">Next</div>
+        </a>
     </div>
+</div>
     <footer id="footer"  class="footer">
                 <div class="footer-social">
                     <a href="https://www.facebook.com/kenza.zafer.9"><i class="fa fa-facebook"></i></a>	
@@ -103,5 +115,9 @@
                 </p><!--/p-->
         
     </footer>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 </body>
 </html>

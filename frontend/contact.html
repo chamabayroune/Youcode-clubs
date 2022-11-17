@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="assets/responsive.css">
         <link rel="shortcut icon" type="image/icon" href="images/YC Clubs.png"/>
         <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+        <script src="assets/main.js"></script>
         <title>YCclubs</title>
     </head>
 <body>
@@ -31,13 +32,15 @@
             </div>
     </div>
     </header>
-    <div class="contact" style="display: flex; flex-direction:row">
-      <div class="form">
-            <input placeholder="name"  />
-            <input placeholder="Object"  "/>
-            <textarea rows="5"  >Message ....</textarea>
-            <br>
-            <button class="span" style="margin-left: 20px;">Send</button>
+    <div class="contact" style="display: flex; flex-direction:row; ">
+        <div class="form" style="height: auto;">
+            <input placeholder="name"  id="name"/>
+            <input placeholder="Email"  id="Email"/>
+            <input placeholder="Object"  id="object"/>
+            <textarea rows="5"  id="message">Message ....</textarea>
+       <br>
+      <button class="span" style="margin-left: 20px;" onclick="verification()">Send</button>
+      <br><p id="p" style="color: red; font-weight:200; padding: 10px;"></p><br>
       </div>
     </div>
     <footer id="footer"  class="footer">
@@ -51,5 +54,42 @@
         </p><!--/p-->
 
 </footer>
+<script>
+function verification() {
+   var nom = document.getElementById('name');
+   var object = document.getElementById('object');
+   var message = document.getElementById('message');
+   var mail = document.getElementById('mail');
+ 
+   var Ermail = /^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/
+   var erreurs = 0;
+   var phoneResult = Ermail.test(mail);
+  alert("phone:"+phoneResult );
+   if ((Ermail.test(mail) == false))
+   {
+    erreurs +=1;
+   }
+   if (nom == null){
+    erreurs +=1
+   }
+   if (object == null){
+    erreurs +=1
+   }
+   if (message == null){
+    erreurs +=1
+   }
+   if (mail == null){
+    erreurs +=1
+   }
+   if (erreurs != 0) {
+      document.getElementById('p').innerHTML= "Le formulaire unvalid";
+      document.getElementById('p').style.color = 'red'
+   }else {
+    document.getElementById('p').innerHTML= "Votre message a été bien envoyer";
+    document.getElementById('p').style.color = 'green'
+   }
+   return (erreurs == 0);
+  }
+  </script>
 </body>
 </html>

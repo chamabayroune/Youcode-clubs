@@ -184,6 +184,9 @@ a{
     justify-content: center;
     flex-direction: column;
 }
+.contact .p{
+  display: none;
+}
 .carousel-fade .carousel-inner .item {
   opacity: 0;
   transition-property: opacity;

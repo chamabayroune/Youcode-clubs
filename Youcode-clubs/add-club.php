@@ -1,3 +1,12 @@
+<?php
+// We need to use sessions, so you should always start sessions using the below code.
+session_start();
+// If the user is not logged in redirect to the login page...
+if (!isset($_SESSION['loggedin'])) {
+	header('Location: index.php');
+	exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,11 +21,11 @@
     <title>YCclubs</title>
 </head>
 <body>
-<div style="display: flex; align-items:center; justify-content:center">
+<div style="display: flex;  justify-content:center ; margin-top:0px">
     <div class="container">
         <h1>Club</h1>
-        <form action="Admin.html">
-            <input placeholder="Logo"  name="logo" required/>
+        <form action="" method="post">
+            <input placeholder="Logo URL"  name="logo" required/>
             <input placeholder="Name"   name="name" required/>
             <select name="categorie" >
                 <option>
@@ -38,13 +47,29 @@
                     Social
                 </option>
             </select>
-            <input placeholder="Date" type="date" name="date" required/>
-            <textarea placeholder="Discription"  cols="5" name="disc" required>Discription</textarea>
+            <input placeholder="Discription" style="height: 50px;" name="disc" required/>
             <br>
-            <button>Done</button>
+            <button type="submit" name='submit'>Done</button>
         </form>
-        <a href="Admin.html">Go back</a>
+        <a href="Admin.php">Go back</a>
     </div>
 </div>
+<?php 
+if(isset($_POST['submit'])){
+$name = $_POST['name'];
+$logo = $_POST['logo'];
+$disc = $_POST['disc'];
+$today = date("Y/m/d");
+$categorie = $_POST['categorie'];
+include 'connection.php';
+$sql = "INSERT INTO club (nom, logo, discription,Categorie, date)
+VALUES ('$name',' $logo', '$disc','$categorie','$today')";
+if ($conn->query($sql) === TRUE) {
+ header('location: admin.php');
+} else {
+  echo "Error: " . $sql . "<br>" . $conn->error;
+}
+}
+?>
 </body>
 </html>

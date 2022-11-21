@@ -38,14 +38,14 @@
             <h1>“Welcome Youcoders !”</h1>
             <p>Find the club that matches your interests</p>
             <div class="search-box">
-            <form action="clubs.html">
-                <select>
-                    <option>All clubs</option>
-                    <option>Art</option>
-                    <option>Sport</option>
-                    <option>Envirement</option>
-                    <option>Social</option>
-                    <option>Robotic</option>
+            <form action="clubs.php" method="post">
+                <select name="cat">
+                    <option value="all">All clubs</option>
+                    <option value="art">Art</option>
+                    <option value="sport">Sport</option>
+                    <option value="envirement">Envirement</option>
+                    <option value="social">Social</option>
+                    <option value="robotic">Robotic</option>
                 </select>
                 <button class="span">Search</button>
             </form>
@@ -55,7 +55,7 @@
     <div id="carouselFade" class="carousel slide carousel-fade" data-ride="carousel">
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
-            <div class="item active" style="background-image: url('https://scontent.fcmn1-2.fna.fbcdn.net/v/t39.30808-6/308943555_209130704802505_2484629517799509470_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=GeRpGHMaZXUAX_kW438&_nc_ht=scontent.fcmn1-2.fna&oh=00_AfAJE4h7lKCT1h0_oT4jpKgBrDqMpDz0jbgOO7TTl2mssg&oe=637B3003');">  
+            <div class="item active" style="background-image: url('assets/images/us.jpg');">  
                 <div class="carousel-caption">
                   <h3>Youcode clubs</h3>
                   <p>“ Youcode is not just a school it's a lifestyle”</p>

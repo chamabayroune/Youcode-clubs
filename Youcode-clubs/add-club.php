@@ -26,7 +26,7 @@ if (!isset($_SESSION['loggedin'])) {
     <div class="container">
         <h1>Club</h1>
         <form action="" method="post" enctype="multipart/form-data">
-            <input placeholder="Logo" name="logo" required/>
+            <input placeholder="Logo" type="file" name="logo" required/>
             <input placeholder="Name"   name="name" required/>
             <select name="categorie" >
                 <option>
@@ -57,14 +57,20 @@ if (!isset($_SESSION['loggedin'])) {
 </div>
 <?php 
 if(isset($_POST['submit'])){
+include 'connection.php';
 $name = $_POST['name'];
-$logo = $_POST['logo'];
+$image_name = $_FILES['logo']['name'];
+$image_tmp = $_FILES['logo']['tmp_name'];
+$image_extension = pathinfo($image_name, PATHINFO_EXTENSION);
+$image_str_lower = strtolower($image_extension);
+$new_image_name = uniqid("IMG-", true).'.'.$image_str_lower;
+$image_upload_path = './upload/'.$new_image_name;
+move_uploaded_file($image_tmp, $image_upload_path);
 $disc = $_POST['disc'];
 $today = date("Y/m/d");
 $categorie = $_POST['categorie'];
-include 'connection.php';
 $sql = "INSERT INTO club (nom, logo, discription,Categorie, date)
-VALUES ('$name',' $logo', '$disc','$categorie','$today')";
+VALUES ('$name','$new_image_name', '$disc','$categorie','$today')";
 if ($conn->query($sql) === TRUE) {
  header('location: admin.php');
 } else {

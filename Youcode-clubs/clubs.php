@@ -2,7 +2,7 @@
 include 'connection.php';
 $categorie = $_POST['cat'];
 if($categorie == 'all'){
-   $sql = "SELECT * FROM club"; 
+   header('location: index.php'); 
 }else{
     $sql = "SELECT * FROM club where categorie = '$categorie'";
 }
@@ -27,18 +27,18 @@ $result = $conn->query($sql);
             <img src="assets/images/YC Clubs.png"/>
         </div>
         <div class="nav">
-            <a href="index.html">Home</a>
+            <a href="index.php">Home</a>
             <a href="About.html">About</a>
             <a href="contact.html">Contact</a>
         </div>
-        <a href="login.html"><i class="fa fa-sign-in" id="sign-in" aria-hidden="true"></i></a>
+        <a href="login.php"><i class="fa fa-sign-in" id="sign-in" aria-hidden="true"></i></a>
         <div class="test" >
             <label style="height: 100px;">☰</label>
         <div class="test-content">
-                <a href="index.html">Home</a>
+                <a href="index.php">Home</a>
                 <a href="About.html">About</a>
                 <a href="contact.html">Contact</a>
-                <a href="login.html"><i class="fa fa-sign-in" aria-hidden="true"></i></a>
+                <a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i></a>
             </div>
     </div>
     </header>
@@ -50,14 +50,14 @@ $result = $conn->query($sql);
                  while($row = $result->fetch_assoc()) { 
                  ?>
                  <div class="club">
-                 <?php echo  '<img src=" '. $row["logo"].' " style="width: 150px; height:150px"/>
+                 <?php echo  '<img src="./upload/'.$row['logo'].'" style="width: 150px; height:150px"/>
                  <h2> '. $row["nom"] .'</h2>
                   <p style="padding: 10px;">'. $row["discription"] .'</p>
                   <p class="date">'. $row["date"] .'</p>
                   <span class="categorie">'. $row["Categorie"] .'</span>
                   </div>';
           }} else {
-            header('location: index.html');
+            echo '<p style="color:red;text-align:center;margin:100px;font-size:20px;width:100%">No club yet !</p>';
           }
                   ?>
                  </div>

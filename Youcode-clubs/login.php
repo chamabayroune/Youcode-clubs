@@ -40,7 +40,7 @@
                 }
 ?>  
         </form>
-        <a href="index.html">Go back</a>
+        <a href="index.php">Go back</a>
     </div>
 </div>
 </body>

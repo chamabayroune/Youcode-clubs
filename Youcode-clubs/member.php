@@ -62,7 +62,6 @@ if(isset($_POST['role'])){
     $club = $_POST['club'];
    $sql = "UPDATE `apprenant` SET `id_club`='$club',`role`='$role' WHERE `id`= '" . $_GET["id"] . "'";
    if ($conn->query($sql) === TRUE) {
-    echo 'done';
    header('location: Apprenant.php');
   } else {
     echo "Error: " . $sql . "<br>" . $conn->error;

@@ -4,8 +4,6 @@ $username = "root";
 $password = "";
 $db = "youcodeclubs";  
 // Create connection
+// new instiation object mn classe 
 $conn = new mysqli($servername, $username, $password,$db);
-if ($conn->connect_error) {
-    echo 'Erreur de connexion';
-  }
 ?>

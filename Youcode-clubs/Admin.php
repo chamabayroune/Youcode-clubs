@@ -3,7 +3,7 @@
 session_start();
 // If the user is not logged in redirect to the login page...
 if (!isset($_SESSION['loggedin'])) {
-	header('Location: index.html');
+	header('Location: index.php');
 	exit;
 }
 ?>
@@ -14,14 +14,6 @@ if (!isset($_SESSION['loggedin'])) {
     <link rel="shortcut icon" type="image/icon" href="assets/images/YC Clubs.png"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet' href='https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap4.min.css'>
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css'>
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap4.min.js"></script>
-    <script>$(document).ready(function () {
-      $('#example').DataTable();
-  });</script>
     <link rel="stylesheet" href="assets/style.css">
     <link rel="stylesheet" href="assets/responsive.css">
     <link rel="shortcut icon" type="image/icon" href="images/YC Clubs.png"/>
@@ -56,7 +48,7 @@ if (!isset($_SESSION['loggedin'])) {
     </header>
        
     <div class="cont">
-        <table id="example" class="table custom-table" style="width:100% !important;">
+        <table id="example" class="table" style="width:80% !important;">
           <thead>
               <tr>
                   <th>Logo</th>
@@ -75,16 +67,16 @@ if (!isset($_SESSION['loggedin'])) {
             if ($result->num_rows > 0) {
       // output data of each row
            while($row = $result->fetch_assoc()) { 
-            echo  '<tr><td><img src=" '. $row["logo"].' " style="width: 50px; height:50px; border-radius :200px;"/></td>
+            echo  '<tr><td><img src="./upload/'.$row['logo'].'" style="width: 50px; height:50px; border-radius :200px;"/></td>
              <td> '. $row["nom"] .'</td>
              <td>'. $row["Categorie"] .'</td>
              <td>'. $row["date"] .'</td>
              <td>'. $row["discription"] .'</td>
              <td ><div class="dropdown">
                  <a ><i class="fa fa-remove"></i></a>
-                 <div class="dropdown-content" style="width: 350px; right: 0px; bottom: 5px;">
-                 <p>Do you wanna delete '. $row["nom"] .'</p>
-                   <a href="deleteclub.php?id='. $row["id"].'">Delete</a>
+                 <div class="dropdown-content" style="width: 350px; right: 0px; top: 3px;">
+                <br> <p>Do you wanna delete '. $row["nom"] .'</p>
+                   <br><br><a href="deleteclub.php?id='. $row["id"].'">Delete</a>
                  </div>
                 </div> </a><a href="updateclub.php?id='. $row["id"].'"><i class="fa fa-pencil" aria-hidden="true" style="float: right;"></i></a></td>
              </tr>';

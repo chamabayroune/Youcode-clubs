@@ -32,7 +32,6 @@ if ($result->num_rows > 0) {
     // output data of each row
          while($row = $result->fetch_assoc()) { 
         echo '<form action="" method="post">
-                <input placeholder="Logo"  name="logo" value="'.$row["logo"].'" required/>
                 <input placeholder="Name" value="'.$row["nom"].'"  name="nom" required/>
                 <select name="categorie" ">
                     <option value="'.$row["Categorie"].'">
@@ -54,7 +53,6 @@ if ($result->num_rows > 0) {
                         Social
                     </option>
                 </select>
-                <input placeholder="Date" type="date" value="'.$row["date"].'" name="date" required/>
                 <textarea placeholder="Discription" value= "" cols="5" name="disc" required>'.$row["discription"].'</textarea>
                 <br>
                 <button name="set">Done</button>
@@ -65,16 +63,11 @@ if ($result->num_rows > 0) {
 <?php
 if(isset($_POST['set'])){
 $name = $_POST['nom'];
-$logo = $_POST['logo'];
+$name = $_POST['name'];
 $disc = $_POST['disc'];
 $categorie = $_POST['categorie'];
-$date = $_POST['date'];
-$sql = "UPDATE `club` SET `nom`='$name',`discription`='$disc',`Categorie`='$categorie',`logo`='$logo',`date`='$date' WHERE `id` = '" . $_GET["id"] . "'";
-if ($conn->query($sql) === TRUE) {
- header('location: admin.php');
-} else {
-  echo "Error: " . $sql . "<br>" . $conn->error;
-}
+$sql = "UPDATE `club` SET `nom`='$name',`discription`='$disc',`Categorie`='$categorie' WHERE `id` = '" . $_GET["id"] . "'";
+header('location: admin.php');
 }
 ?>
 </body>

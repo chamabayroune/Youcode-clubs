@@ -3,7 +3,7 @@
 session_start();
 // If the user is not logged in redirect to the login page...
 if (!isset($_SESSION['loggedin'])) {
-	header('Location: index.html');
+	header('Location: index.php');
 	exit;
 }
 ?>
@@ -14,14 +14,6 @@ if (!isset($_SESSION['loggedin'])) {
     <link rel="shortcut icon" type="image/icon" href="assets/images/YC Clubs.png"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet' href='https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap4.min.css'>
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css'>
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap4.min.js"></script>
-    <script>$(document).ready(function () {
-      $('#example').DataTable();
-  });</script>
     <link rel="stylesheet" href="assets/style.css">
     <link rel="stylesheet" href="assets/responsive.css">
     <link rel="shortcut icon" type="image/icon" href="images/YC Clubs.png"/>
@@ -54,21 +46,19 @@ if (!isset($_SESSION['loggedin'])) {
     </div>
     </header>
     <div class="cont" style="width:100%;">
-        <table id="example" class="table custom-table" style="width:100% !important;">
-            <thead>
+        <table id="example" class="table" style="width:80%;
+  border-collapse: collapse;">
                 <tr>
                     <th>Image</th>
                     <th>Name</th>
                     <th>Class</th>
                     <th>Age</th>
-                    <th style="width: 200px;">Role</th>
-                    <th style="width: 300PX;">Club</th>
-                </tr>
-            </thead>
-            <tbody>
-            <?php 
-            include 'connection.php';
-            $sql = "SELECT * FROM apprenant";
+                    <th style="width: 100px;">Role</th>
+                    <th style="width: 200PX;">Club</th>
+</tr>
+    <?php
+    include 'connection.php';
+        $sql = "SELECT * FROM apprenant";
             $result = $conn->query($sql);
             if ($result->num_rows > 0) {
       // output data of each row
@@ -87,19 +77,16 @@ if (!isset($_SESSION['loggedin'])) {
                 <td>'. $row["Class"] .'</td>
                 <td>'. $row["Age"] .' ans</td>
                  <td>'. $row["Role"] .'</td>
-                 <td >'. $row["id_club"].' <div class="dropdown"style="float:right;>
+                 <td >'. $row["id_club"].' <div class="dropdown"style="float:right;">
                  <a  color:black"><i class="fa fa-remove"></i></a>
-                 <div class="dropdown-content" style="width: 350px; right: 0px; bottom: 5px;">
-                 <p>Remove '. $row["Nom"] .' from  '. $row["id_club"].'</p>
-                   <a href="deletemembre.php?id='. $row["id"].'">Remove</a>
+                 <div class="dropdown-content" style="width: 350px;right: 0px; top: 3px;">
+                 <br> <p>Remove '. $row["Nom"] .' from  '. $row["id_club"].'</p>
+                 <br> <br>  <a href="deletemembre.php?id='. $row["id"].'">Remove</a>
                  </div> </td> 
                  </tr>';
             }   
-}} else {
-  echo "0 results";
-}
+}}
            ?>
-            </tfoot>
         </table>
     </div>
     <footer id="footer"  class="footer">

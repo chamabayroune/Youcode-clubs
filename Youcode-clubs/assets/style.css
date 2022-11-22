@@ -30,7 +30,7 @@ header a{
 .nav a{
     text-decoration: none;
     margin: 10px;
-    font-size: 18px;
+    font-size: 14px;
     color: black;
 }
 .nav a:hover{
@@ -169,9 +169,6 @@ footer {
     color: black;
     display: inline;
     margin-left: 30px;
-    text-decoration: none;
-}
-a{
     text-decoration: none;
 }
 .contact{

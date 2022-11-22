@@ -12,6 +12,7 @@ $result = $conn->query($sql);
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="shortcut icon" type="image/icon" href="assets/images/YC Clubs.png"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/style.css">
@@ -41,6 +42,7 @@ $result = $conn->query($sql);
             </div>
     </div>
     </header>
+    <div style="min-height:70vh">
     <div class="clubs" id="clubs">
         <?php
         if ($result->num_rows > 0) {
@@ -60,6 +62,7 @@ $result = $conn->query($sql);
                   ?>
                  </div>
     </div>
+        </div>
     <footer id="footer"  class="footer">
         <div class="footer-social">
             <a href="https://www.facebook.com/kenza.zafer.9"><i class="fa fa-facebook"></i></a>	

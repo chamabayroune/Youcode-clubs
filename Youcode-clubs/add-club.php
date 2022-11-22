@@ -11,6 +11,7 @@ if (!isset($_SESSION['loggedin'])) {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="shortcut icon" type="image/icon" href="assets/images/YC Clubs.png"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/style.css">
@@ -24,8 +25,8 @@ if (!isset($_SESSION['loggedin'])) {
 <div style="display: flex;  justify-content:center ; margin-top:0px">
     <div class="container">
         <h1>Club</h1>
-        <form action="" method="post">
-            <input placeholder="Logo URL"  name="logo" required/>
+        <form action="" method="post" enctype="multipart/form-data">
+            <input placeholder="Logo" name="logo" required/>
             <input placeholder="Name"   name="name" required/>
             <select name="categorie" >
                 <option>

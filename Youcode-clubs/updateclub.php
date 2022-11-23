@@ -32,7 +32,7 @@ if ($result->num_rows > 0) {
     // output data of each row
          while($row = $result->fetch_assoc()) { 
         echo '<form action="" method="post">
-                <input placeholder="Name" value="'.$row["nom"].'"  name="nom" required/>
+                <input placeholder="Name" value="'.$row["nom"].'" name="nom" required/>
                 <select name="categorie" ">
                     <option value="'.$row["Categorie"].'">
                     '.$row["Categorie"].'
@@ -63,11 +63,14 @@ if ($result->num_rows > 0) {
 <?php
 if(isset($_POST['set'])){
 $name = $_POST['nom'];
-$name = $_POST['name'];
 $disc = $_POST['disc'];
 $categorie = $_POST['categorie'];
 $sql = "UPDATE `club` SET `nom`='$name',`discription`='$disc',`Categorie`='$categorie' WHERE `id` = '" . $_GET["id"] . "'";
-header('location: admin.php');
+if ($conn->query($sql) === TRUE) {
+ header('location: admin.php');
+} else {
+  echo "Error: " . $sql . "<br>" . $conn->error;
+}
 }
 ?>
 </body>

@@ -23,16 +23,16 @@
                 <button name="auth">Sign In</button>
                 <?php      
                 if(isset($_POST['auth'])){
-                   include('connection.php');  
+    include('connection.php');  
     $username = $_POST['username'];  
     $password = $_POST['password'];   
-        $sql = "select * from admin where username = '$username' and password = '$password'";  
-        $result = $conn->query($sql);
-        if ($result->num_rows > 0) { 
-        session_start();
+    $sql = "select * from admin where username = '$username' and password = '$password'";  
+    $result = $conn->query($sql);
+    if ($result->num_rows > 0) { 
+    session_start();
 		$_SESSION['loggedin'] = TRUE;
 		$_SESSION['name'] = $_POST['username'];
-            header('Location: admin.php');
+        header('Location: admin.php');
         }  
         else{  
            echo '<p style="color:red; padding-top:10px">Username or password unvalid</p>';  

@@ -69,7 +69,7 @@ if (!isset($_SESSION['loggedin'])) {
        <td>'. $row["Class"] .'</td>
        <td>'. $row["Age"] .' ans</td>
         <td>Apprennant</td>
-        <td ><a style="margin-left: 5rem;"href="member.php?id='. $row["id"].'" >Add Club</a></td> 
+        <td ><a style=""href="member.php?id='. $row["id"].'" >Add Club</a></td> 
         </tr>';
             }else{
                 echo  '<tr><td><img src=" '. $row["logo"].' " style="width: 50px; height:50px; border-radius: 200px;"/></td>
